@@ -1,67 +1,49 @@
-interface ICard {
-    id: number;
-    name: string;
-    status: string;
-    profession: string;
-    twitter: string;
-    picture: string;
-    alternativeText: string;
-    selected: boolean;
-    letter: string;
-}
+import { famousGentlemen } from "./models/data";
 
-export function Card({
-    id,
-    name,
-    status,
-    profession,
-    twitter,
-    picture,
-    alternativeText,
-    selected,
-    letter,
-}: ICard) {
+export function Card() {
     return (
         <>
-            <div>
-                <li className="gentleman" id={id.toString()}>
+            {famousGentlemen.map((value) => (
+                <li className="gentleman">
                     <div className="gentleman__avatar-container">
                         <img
                             className="gentleman__avatar"
-                            src={picture}
-                            alt={alternativeText}
+                            src={"../assests/" + value.picture}
+                            alt=" "
                         />
-                        <span className="gentleman__initial">{letter}</span>
+                        <span className="gentleman__initial">
+                            {value.name.slice(0, 1)}
+                        </span>
                     </div>
                     <div className="gentleman__data-container">
-                        <h2 className={name}></h2>
+                        <h2 className="gentleman__name">{value.name}</h2>
                         <ul className="gentleman__data-list">
                             <li className="gentleman__data">
                                 <span className="gentleman__data-label">
                                     Profession:
                                 </span>
-                                {profession}
+                                {value.profession}
                             </li>
                             <li className="gentleman__data">
                                 <span className="gentleman__data-label">
                                     Status:
-                                </span>
-                                {status}
+                                </span>{" "}
+                                {value.status}
                             </li>
                             <li className="gentleman__data">
                                 <span className="gentleman__data-label">
                                     Twitter:
-                                </span>
-                                {twitter}
+                                </span>{" "}
+                                {value.twitter}
                             </li>
                         </ul>
                     </div>
-                    <i className="icon gentleman__icon fas fa-check"></i>
-                    {selected ? "selected" : "not selected"}
-                    <i className="icon gentleman__icon gentleman__icon--delete fas fa-times"></i>
+                    <i className="icon gentleman__icon fas fa-check">✔</i>
+                    <i className="icon gentleman__icon gentleman__icon--delete fas fa-times">
+                        ✗
+                    </i>
                 </li>
-                ;
-            </div>
+            ))}
         </>
     );
 }
