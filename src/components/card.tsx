@@ -8,7 +8,7 @@ export function Card() {
                     <div className="gentleman__avatar-container">
                         <img
                             className="gentleman__avatar"
-                            src={"../assests/" + value.picture}
+                            src={"../../assets/" + value.picture}
                             alt=" "
                         />
                         <span className="gentleman__initial">
@@ -38,10 +38,10 @@ export function Card() {
                             </li>
                         </ul>
                     </div>
-                    <i className="icon gentleman__icon fas fa-check">✔</i>
-                    <i className="icon gentleman__icon gentleman__icon--delete fas fa-times">
-                        ✗
-                    </i>
+                    <p className="icon gentleman__icon fas fa-check">✔</p>
+                    <p className="icon gentleman__icon gentleman__icon--delete fas fa-times">
+                        ✕
+                    </p>
                 </li>
             ))}
         </>
