@@ -1,36 +1,58 @@
-export function Card() {
+interface ICard {
+    id: number;
+    name: string;
+    status: string;
+    profession: string;
+    twitter: string;
+    picture: string;
+    alternativeText: string;
+    selected: boolean;
+    letter: string;
+}
+
+export function Card({
+    id,
+    name,
+    status,
+    profession,
+    twitter,
+    picture,
+    alternativeText,
+    selected,
+    letter,
+}: ICard) {
     return (
         <>
             <div>
-                <li className="gentleman">
+                <li className="gentleman" id={id.toString()}>
                     <div className="gentleman__avatar-container">
                         <img
                             className="gentleman__avatar"
-                            src="img/fary.jpg"
-                            alt="The Fary pointing at you"
+                            src={picture}
+                            alt={alternativeText}
                         />
                         <span className="gentleman__initial">F</span>
                     </div>
                     <div className="gentleman__data-container">
-                        <h2 className="gentleman__name">The Fary</h2>
+                        <h2 className={name}></h2>
                         <ul className="gentleman__data-list">
                             <li className="gentleman__data">
                                 <span className="gentleman__data-label">
                                     Profession:
                                 </span>
-                                Influencer
+                                {profession}
                             </li>
                             <li className="gentleman__data">
                                 <span className="gentleman__data-label">
                                     Status:
                                 </span>{" "}
-                                RIP
+                                {status}
                             </li>
                             <li className="gentleman__data">
                                 <span className="gentleman__data-label">
                                     Twitter:
                                 </span>{" "}
-                                Pending
+                                {twitter}
                             </li>
                         </ul>
                     </div>
