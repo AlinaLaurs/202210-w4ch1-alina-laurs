@@ -31,7 +31,7 @@ export function Card({
                             src={picture}
                             alt={alternativeText}
                         />
-                        <span className="gentleman__initial">F</span>
+                        <span className="gentleman__initial">{letter}</span>
                     </div>
                     <div className="gentleman__data-container">
                         <h2 className={name}></h2>
@@ -45,18 +45,19 @@ export function Card({
                             <li className="gentleman__data">
                                 <span className="gentleman__data-label">
                                     Status:
-                                </span>{" "}
+                                </span>
                                 {status}
                             </li>
                             <li className="gentleman__data">
                                 <span className="gentleman__data-label">
                                     Twitter:
-                                </span>{" "}
+                                </span>
                                 {twitter}
                             </li>
                         </ul>
                     </div>
                     <i className="icon gentleman__icon fas fa-check"></i>
+                    {selected ? "selected" : "not selected"}
                     <i className="icon gentleman__icon gentleman__icon--delete fas fa-times"></i>
                 </li>
                 ;

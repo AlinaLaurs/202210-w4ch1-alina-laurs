@@ -1,4 +1,4 @@
-export function Card() {
+export function Header() {
     return (
         <>
             <div>
